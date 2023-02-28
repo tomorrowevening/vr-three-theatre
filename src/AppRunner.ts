@@ -24,12 +24,10 @@ export default class AppRunner {
     this.scene = new Scene()
 
     this.container = new Object3D()
-    // this.container.position.y = 6
     this.scene.add(this.container)
 
     this.camera = new PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000)
     this.camera.position.y = 6
-    // this.container.add(this.camera)
   }
 
   init() {
@@ -78,6 +76,8 @@ export default class AppRunner {
           degToRad(values.rotation.z),
         )
       })
+
+      // Use custom RAF Driver
       sheet.sequence.play({ iterationCount: Infinity, rafDriver: this.rafDriver, range: [0, 4] })
     })
   }
@@ -115,7 +115,7 @@ export default class AppRunner {
     this.renderer.setSize(width, height)
   }
 
-  //
+  // Per-frame updates
 
   update() {
     //
