@@ -1,0 +1,9 @@
+node_modules
+*.hlsl
+dist/
+.idea/
+.vscode/
+.yarnrc
+
+#incase somebody uses yarn dont commit this file to teach them a lesson
+yarn.lock
